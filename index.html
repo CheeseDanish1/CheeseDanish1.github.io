@@ -1,180 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        background-color: #eee;
+      }
+      /* Set the width of each box and center the image */
+      .box {
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+        text-align: center;
+        padding: 10px;
+        height: 14vh;
+        background-color: #d9b355;
+        margin-bottom: 5vh;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        /* font */
+        font-size: 24px !important;
+        color: #96351e !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+      p {
+        margin: 0;
+      }
+
+      img {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+      }
+
+      .center-column {
+        width: 50%;
+      }
+      /* Set the width of the columns and float them left/right */
+      .left-column,
+      .right-column {
+        width: 25%;
+        float: left;
+      }
+
+      /* Clear the float after the columns */
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .button-62 {
+        background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+        border: 0;
+        border-radius: 12px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 2.5;
+        outline: transparent;
+        padding: 0 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow 0.2s ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        margin-top: 30px;
+      }
+
+      .button-62:not([disabled]):focus {
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+          -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+          0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+      }
+
+      .button-62:not([disabled]):hover {
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+          -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+          0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+      }
+    </style>
   </head>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      background-image: url("https://33k3cuyqkgniqpxfbguphs4wa3kasvuasnwnhaay72epaej2ijaq.arweave.net/3tWxUxBRmog-5Qmo88uWBtQJVoCTbNOAGP6I8BE6QkE?ext=PNG");
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: 50%;
-      overflow: hidden;
-    }
-    h1 {
-      position: absolute;
-      text-align: center;
-      font-size: 40px;
-      top: 70px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      color: #eee;
-    }
-    .units {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .test {
-      width: 22vw;
-      height: 20vh;
-      background-color: #d9b355;
-      margin-bottom: 5vh;
-      margin-left: 1vw;
-      border-radius: 25px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-    .test-right {
-      margin-left: 0;
-      margin-right: 1vw;
-    }
-    h2 {
-      text-align: center;
-      margin-top: 5px;
-      font-size: 30px;
-      color: #96351e;
-    }
-
-    button {
-      --b: 3px; /* border thickness */
-      --s: 0.15em; /* size of the corner */
-      --c: #bd5532;
-
-      padding: calc(0.05em + var(--s)) calc(0.3em + var(--s));
-      color: var(--c);
-      --_p: var(--s);
-      background: conic-gradient(
-          from 90deg at var(--b) var(--b),
-          #0000 90deg,
-          var(--c) 0
-        )
-        var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-        calc(100% - var(--b) - 2 * var(--_p));
-      transition: 0.3s linear, color 0s, background-color 0s;
-      outline: var(--b) solid #0000;
-      outline-offset: 0.2em;
-    }
-    button:hover,
-    button:focus-visible {
-      --_p: 0px;
-      outline-color: var(--c);
-      outline-offset: 0.05em;
-    }
-    button:active {
-      background: var(--c);
-      color: #fff;
-    }
-    button {
-      font-family: system-ui, sans-serif;
-      font-weight: bold;
-      font-size: 2rem;
-      cursor: pointer;
-      border: none;
-      margin: 0.1em;
-      margin-top: 20px;
-    }
-    .button-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-    .alt {
-      color: rgb(40, 108, 120);
-    }
-    .button-alt {
-      color: rgb(40, 108, 120);
-      background: conic-gradient(
-          from 90deg at var(--b) var(--b),
-          #0000 90deg,
-          rgb(40, 108, 120) 0
-        )
-        var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-        calc(100% - var(--b) - 2 * var(--_p));
-    }
-
-    .button-alt:hover,
-    .button-alt:focus-visible {
-      outline-color: rgb(40, 108, 120);
-    }
-    .button-alt:active {
-      background: rgb(40, 108, 120);
-    }
-  </style>
   <body>
-    <h1>AP US History Project!!</h1>
-    <div class="units">
-      <div class="units-left">
-        <div class="test">
-          <h2>Period 1 (1491-1607)</h2>
-          <div class="button-wrapper">
-            <button class="button-alt">Learn about it!!</button>
-          </div>
-        </div>
-        <div class="test">
-          <h2 class="alt">Period 1 (1491-1607)</h2>
-          <div class="button-wrapper">
-            <button>Learn about it!!</button>
-          </div>
-        </div>
-        <div class="test">
-          <h2>Period 1 (1491-1607)</h2>
-          <div class="button-wrapper">
-            <button class="button-alt">Learn about it!!</button>
-          </div>
-        </div>
-        <div class="test">
-          <h2 class="alt">Period 1 (1491-1607)</h2>
-          <div class="button-wrapper">
-            <button>Learn about it!!</button>
-          </div>
-        </div>
+    <div class="left-column">
+      <div class="box">
+        <p>Period 1 (1491-1607)</p>
+        <button class="button-62" role="button">Discovering America</button>
       </div>
-      <div class="units-right">
-        <div class="units-left">
-          <div class="test test-right">
-            <h2>Period 1 (1491-1607)</h2>
-            <div class="button-wrapper">
-              <button class="button-alt">Learn about it!!</button>
-            </div>
-          </div>
-          <div class="test test-right">
-            <h2 class="alt">Period 1 (1491-1607)</h2>
-            <div class="button-wrapper">
-              <button>Learn about it!!</button>
-            </div>
-          </div>
-          <div class="test test-right">
-            <h2>Period 1 (1491-1607)</h2>
-            <div class="button-wrapper">
-              <button class="button-alt">Learn about it!!</button>
-            </div>
-          </div>
-          <div class="test test-right">
-            <h2 class="alt">Period 1 (1491-1607)</h2>
-            <div class="button-wrapper">
-              <button>Learn about it!!</button>
-            </div>
-          </div>
-        </div>
+      <div class="box">
+        <p>Period 2 (1607-1754)</p>
+        <button class="button-62" role="button">Colonial period</button>
+      </div>
+      <div class="box">
+        <p>Period 3 (1754-1800)</p>
+        <button class="button-62" role="button">Revolutionary era</button>
+      </div>
+      <div class="box">
+        <p>Period 4 (1800-1848)</p>
+        <button class="button-62" role="button">Westward expansion</button>
       </div>
     </div>
+    <div class="center-column">
+      <img
+        src="https://33k3cuyqkgniqpxfbguphs4wa3kasvuasnwnhaay72epaej2ijaq.arweave.net/3tWxUxBRmog-5Qmo88uWBtQJVoCTbNOAGP6I8BE6QkE?ext=PNG"
+        alt="your-image-description"
+      />
+    </div>
+    <div class="right-column">
+      <div class="box">
+        <p>Period 5 (1848-1877)</p>
+        <button class="button-62" role="button">The Reconstruction</button>
+      </div>
+      <div class="box">
+        <p>Period 6 (1865-1898)</p>
+        <button class="button-62" role="button">Gilded Ages</button>
+      </div>
+      <div class="box">
+        <p>Period 7 (1890-1945)</p>
+        <button class="button-62" role="button">Progressive Era</button>
+      </div>
+      <div class="box">
+        <p>Period 8 (1945-1980)</p>
+        <button class="button-62" role="button">The Cold War</button>
+      </div>
+    </div>
+    <div class="clearfix"></div>
   </body>
 </html>
