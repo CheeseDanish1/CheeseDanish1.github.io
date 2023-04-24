@@ -5,6 +5,12 @@
     <title>APUSH Project - Sam Pearlman</title>
     <style>
       /* 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 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         display: flex;
         flex-wrap: nowrap;
@@ -16,7 +22,7 @@
         width: 100%;
         max-width: 350px;
         min-height: 150px;
-        margin: auto;
+        /* margin: auto; */
         text-align: center;
         padding: 10px;
         height: 14vh;
@@ -35,19 +41,30 @@
       }
 
       img {
-        height: 50vw;
+        width: calc(50vw - 10%);
         position: absolute;
-        top: 0;
+        /* top: 0; */
       }
 
       .center-column {
         width: 50%;
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 200px;
+        vertical-align: middle;
       }
       /* Set the width of the columns and float them left/right */
       .left-column,
       .right-column {
         width: 25%;
-        float: left;
+        /* float: left; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        margin-top: 5vh;
+        align-items: center;
       }
 
       /* Clear the float after the columns */
@@ -79,6 +96,7 @@
         touch-action: manipulation;
         white-space: nowrap;
         margin-top: 30px;
+        /* width: 200px; */
       }
 
       .button-62:not([disabled]):focus {
@@ -91,6 +109,25 @@
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
           -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
           0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+      }
+
+      @media (max-width: 1000px) {
+        img {
+          visibility: hidden;
+        }
+        body {
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+
+        .left-column,
+        .right-column {
+          width: 100vw;
+        }
+
+        .box {
+          max-width: 500px;
+        }
       }
     </style>
   </head>
@@ -149,7 +186,18 @@
           <button class="button-62" role="button">The Cold War</button>
         </a>
       </div>
+      <div class="box">
+        <p>Period 9 (1980-Present)</p>
+        <a href="./period-nine.html">
+          <button class="button-62" role="button">Modern Times</button>
+        </a>
+      </div>
     </div>
     <div class="clearfix"></div>
   </body>
+  <script>
+    // let image = document.querySelector("img");
+    // console.log(image);
+    // image.style.setProperty("--img-width", "calc(50vw-100px)");
+  </script>
 </html>
