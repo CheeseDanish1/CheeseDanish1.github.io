@@ -112,8 +112,10 @@
       }
 
       @media (max-width: 1000px) {
-        img {
+        img,
+        .center-column {
           visibility: hidden;
+          display: none;
         }
         body {
           flex-wrap: wrap;
@@ -123,6 +125,7 @@
         .left-column,
         .right-column {
           width: 100vw;
+          margin: 0;
         }
 
         .box {
