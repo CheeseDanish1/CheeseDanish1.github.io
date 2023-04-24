@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Memories of Mary Anne</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-header"></div>
+    <div class="fade-in-header">
+      <header>
+        <h1>Memories of Mary Anne</h1>
+      </header>
+    </div>
+    <div class="intro">
+      <!-- <h1 class="intro-title">A Life and Story for Old Times' Sake</h1> -->
+      <h1 class="intro-title">A 19th Century American Persona</h1>
+
+      <div class="thing">
+        <div class="intro-images">
+          <img
+            class="anne-image anne-image1"
+            src="./images/mary5.jpg"
+            alt="Mary Anne"
+          />
+          <img
+            class="anne-image anne-image2"
+            src="./images/mary3.jpg"
+            alt="Mary Anne"
+          />
+          <img
+            class="anne-image anne-image3"
+            src="./images/mary2.jpg"
+            alt="Mary Anne"
+          />
+        </div>
+      </div>
+      <div class="down-arrow"></div>
+    </div>
+    <div class="breakup-line"></div>
+    <div class="entries">
+      <h1 class="entries-intro">Entries from my journal</h1>
+      <div class="entry">
+        <h2>July 4th, 1836</h2>
+        <p>
+          I am Mary Anne, a 20-year-old woman living in Boston, Massachusetts. I
+          work as a seamstress in a local shop. Today is Independence Day, and
+          the city is alive with festivities. People are out in the streets,
+          waving flags and cheering. This year, there is a lot of talk about the
+          upcoming presidential election. The Whig Party has nominated William
+          Henry Harrison, and the Democrats have nominated Martin Van Buren. I
+          am not very interested in politics, but I have heard that the economy
+          is not doing well, and many people are struggling to find work.
+        </p>
+      </div>
+      <div class="entry">
+        <h2>January 2nd, 1845</h2>
+        <p>
+          It has been almost ten years since I wrote in this journal. I am now
+          29 years old, married to my husband, John, and living in Cincinnati,
+          Ohio. We moved here a few years ago to start a new life. The city is
+          growing rapidly, thanks in part to the Ohio River, which allows goods
+          to be transported easily. One of the most exciting things to happen
+          recently is the completion of the Miami and Erie Canal. This new
+          transportation system will make it easier to move goods across the
+          state. However, I am concerned about the issue of slavery, which
+          continues to divide the nation.
+        </p>
+      </div>
+      <div class="entry">
+        <h2>March 10th, 1850</h2>
+        <p>
+          It has been a few years since my last entry, and a lot has happened.
+          John and I now have three children, and we are still living in
+          Cincinnati. I have been following the debates in Congress about the
+          Compromise of 1850. The Compromise is an attempt to resolve the issue
+          of slavery in the new territories that the United States acquired from
+          Mexico. The Fugitive Slave Act, which is part of the Compromise,
+          requires citizens to assist in the capture of runaway slaves. This law
+          is deeply troubling to me, and I worry about the impact it will have
+          on free black people in the North.
+        </p>
+      </div>
+      <div class="entry">
+        <h2>October 12th, 1862</h2>
+        <p>
+          The country is at war. John is fighting for the Union Army, and I am
+          doing my best to support the war effort from home. I am sewing
+          uniforms and bandages for the soldiers. I am also trying to keep up
+          with the news from the front lines. The Battle of Antietam was fought
+          last month, and it was one of the bloodiest battles in American
+          history. The Union army managed to repel the Confederate forces, but
+          the cost was high. I pray for John's safety every day.
+        </p>
+      </div>
+      <div class="entry">
+        <h2>November 5th, 1876</h2>
+        <p>
+          It has been a few years since the war ended. John made it home safely,
+          but he is not the same man he was before he left. He suffers from
+          nightmares and has trouble sleeping. I have been doing my best to
+          support him, but it is not easy. The country is still dealing with the
+          aftermath of the war. Reconstruction has been difficult, and there are
+          still tensions between the North and the South. However, there is also
+          a sense of hope for the future. The country is changing rapidly, with
+          new technological advances and social movements. I am curious to see
+          what the future will bring.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let intro = document.querySelector(".intro");
+    let header = document.querySelector("header");
+    let headerHeight = header.offsetHeight;
+    intro.style.setProperty(`--height`, `calc(100vh - ${headerHeight}px)`);
+
+    let arrow = document.querySelector(".down-arrow");
+    arrow.addEventListener("click", () => {
+      window.scroll({
+        behavior: "smooth",
+        top: document.querySelector(".entries").offsetTop,
+      });
+    });
+  </script>
+</html>
